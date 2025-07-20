@@ -1,35 +1,46 @@
 [
   {
-    "id": "1752904864569",
+    "id": "1752996559303",
     "name": "اسوار فضة",
     "category": "اكسسوارات",
-    "priceIn": 1,
-    "priceOut": 1,
-    "qty": 12,
+    "priceIn": 1000,
+    "priceOut": 5000,
+    "qty": 14,
     "expiryDate": "",
     "imgPath": "",
-    "lastSold": "2025-07-19T20:20:26.272Z"
+    "lastSold": "2025-07-20T07:30:22.427Z"
   },
   {
-    "id": "1752904883225",
-    "name": "تيشيرت احمر",
-    "category": "ملابس",
-    "priceIn": 1,
-    "priceOut": 5,
+    "id": "1752996589429",
+    "name": "قلادة ذهب",
+    "category": "اكسسوارات",
+    "priceIn": 2000,
+    "priceOut": 10000,
+    "qty": 7,
+    "expiryDate": "",
+    "imgPath": "",
+    "lastSold": "2025-07-20T07:30:25.088Z"
+  },
+  {
+    "id": "1752996617798",
+    "name": "اسوار لؤلؤ",
+    "category": "اكسسوارات",
+    "priceIn": 5000,
+    "priceOut": 10000,
     "qty": 4,
     "expiryDate": "",
     "imgPath": "",
-    "lastSold": "2025-07-20T01:44:27.937Z"
+    "lastSold": null
   },
   {
-    "id": "1752905872240",
-    "name": "قلادة ذهب",
+    "id": "1752997024886",
+    "name": " قلادة العنقاء فضة",
     "category": "اكسسوارات",
-    "priceIn": 2,
-    "priceOut": 5,
-    "qty": 13,
+    "priceIn": 5000,
+    "priceOut": 15000,
+    "qty": 38,
     "expiryDate": "",
     "imgPath": "",
-    "lastSold": "2025-07-19T18:54:21.775Z"
+    "lastSold": "2025-07-20T07:37:20.739Z"
   }
 ]
