@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+
+
+
+
+
+
+
+<div class="alert-list">
+<% if ((lowStock && lowStock.length) || 
+       (expired && expired.length) || 
+       (inactive && inactive.length)) { %>
+  <% lowStock.forEach(p => { %>
+  <div class="alert-item" style="border-left-color:#ffc107;">
+    <span class="alert-icon">⚠️</span>
+    <div class="alert-text">الكمية منخفضة لمنتج "<%= p.name %>"</div>
+    <span class="alert-date">المتبقي <%= p.qty %></span>
+  </div>
+  <% }) %>
+
+  <% expired.forEach(p => { %>
+  <div class="alert-item" style="border-left-color:#f44336;">
+    <span class="alert-icon">⏳</span>
+    <div class="alert-text">صلاحية "<%= p.name %>" منتهية منذ مدة</div>
+    <span class="alert-date"><%= p.expiryDate %></span>
+  </div>
+  <% }); %>
+  <% inactive.forEach(p => { %>
+  <div class="alert-item" style="border-left-color:#03a9f4;">
+    <span class="alert-icon">🕒</span>
+    <div class="alert-text">منتج <%= p.name %> لم يُبع منذ شهر</div>
+    <span class="alert-date">منذ 7 أيام</span>
+  </div>
+  <% }); %>
+  <% } else { %>
+  <div class="alert-list">
+    <div class="alert-item">
+      <span class="alert-icon">✅</span>
+      <div class="alert-text">لا توجد تنبيهات حالياً، كلشي تمام 🙌</div>
+      <span class="alert-date">الآن</span>
+    </div>
+  </div>
+<% } %>
+</div>
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1752904864569",
+    "name": "اسوار فضة",
+    "category": "اكسسوارات",
+    "priceIn": 1,
+    "priceOut": 1,
+    "qty": 12,
+    "expiryDate": "",
+    "imgPath": "",
+    "lastSold": "2025-07-19T20:20:26.272Z"
+  },
+  {
+    "id": "1752904883225",
+    "name": "تيشيرت احمر",
+    "category": "ملابس",
+    "priceIn": 1,
+    "priceOut": 5,
+    "qty": 4,
+    "expiryDate": "",
+    "imgPath": "",
+    "lastSold": "2025-07-20T01:44:27.937Z"
+  },
+  {
+    "id": "1752905872240",
+    "name": "قلادة ذهب",
+    "category": "اكسسوارات",
+    "priceIn": 2,
+    "priceOut": 5,
+    "qty": 13,
+    "expiryDate": "",
+    "imgPath": "",
+    "lastSold": "2025-07-19T18:54:21.775Z"
+  }
+]
