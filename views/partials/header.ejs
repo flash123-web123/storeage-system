@@ -14,12 +14,12 @@
     <span class="shop-name"><%= projectName %></span>
   </div>
   <ul class="nav-links">
-    <li><a href="/products">المنتجات</a></li>
-    <li><a href="/stats">الإحصائيات</a></li>
-    <li><a href="/notifications">التنبيهات</a></li>
-    <li><a href="/profit">الأرباح</a></li>
-    <li><a href="/reports/week">التقرير الأسبوعي</a></li>
-    <li><a href="/help">المساعدة</a></li>
+    <li><a href="/products"  class="<%= activePage === 'products' ? 'active' : '' %>">المنتجات</a></li>
+    <li><a href="/stats"  class="<%= activePage === 'stats' ? 'active' : '' %>">الإحصائيات</a></li>
+    <li><a href="/notifications"  class="<%= activePage === 'notification' ? 'active' : '' %>">التنبيهات</a></li>
+    <li><a href="/profit"  class="<%= activePage === 'profit' ? 'active' : '' %>">الأرباح</a></li>
+    <li><a href="/reports/week" >التقرير الأسبوعي</a></li>
+    <li><a href="/help"  class="<%= activePage === 'help' ? 'active' : '' %>">المساعدة</a></li>
   </ul>
 </nav>
 
@@ -34,12 +34,12 @@
   </div>
   <button class="hamburger" onclick="toggleMenu()">☰</button>
   <ul class="nav-menu" id="navMenu">
-    <li><a href="/products">المنتجات</a></li>
-    <li><a href="/stats">الإحصائيات</a></li>
-    <li><a href="/notifications">التنبيهات</a></li>
-    <li><a href="/profit">الأرباح</a></li>
+    <li><a  class="<%= activePage === 'products' ? 'active' : '' %>" href="/products">المنتجات</a></li>
+    <li><a class="<%= activePage === 'stats' ? 'active' : '' %>" href="/stats">الإحصائيات</a></li>
+    <li><a class="<%= activePage === 'notification' ? 'active' : '' %>" href="/notifications">التنبيهات</a></li>
+    <li><a class="<%= activePage === 'profit' ? 'active' : '' %>" href="/profit">الأرباح</a></li>
     <li><a href="/reports/week">التقرير الأسبوعي</a></li>
-    <li><a href="/help">المساعدة</a></li>
+    <li><a class="<%= activePage === 'help' ? 'active' : '' %>" href="/help">المساعدة</a></li>
   </ul>
 </nav>
 
