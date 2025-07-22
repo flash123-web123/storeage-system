@@ -19,7 +19,7 @@
     "qty": 7,
     "expiryDate": "",
     "imgPath": "",
-    "lastSold": "2025-07-20T07:30:25.088Z"
+    "lastSold": "2025-07-01T07:30:25.088Z"
   },
   {
     "id": "1752996617798",
@@ -42,5 +42,16 @@
     "expiryDate": "",
     "imgPath": "",
     "lastSold": "2025-07-20T07:37:20.739Z"
+  },
+  {
+    "id": "1753068151021",
+    "name": "ماسك للوجه",
+    "category": "العناية بالبشرة",
+    "priceIn": 5000,
+    "priceOut": 10000,
+    "qty": 6,
+    "expiryDate": "2025-07-20",
+    "imgPath": "",
+    "lastSold": null
   }
 ]
