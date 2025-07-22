@@ -99,7 +99,7 @@ if (category) {
   products = products.filter(p => p.category === category);
 }
 
-res.render('products', { products, categories, category });
+res.render('products', { products, categories, category, activePage: 'products' });
 
 });
 
@@ -315,7 +315,7 @@ app.get('/receipt/:id', async (req, res) => {
 });
 
 // 3) إحصائيات مع Chart.js
-app.get('/stats', (req, res) => res.render('stats'));
+app.get('/stats', (req, res) => res.render('stats', {activePage: 'stats'}));
 app.get('/stats-data', (req, res) => {
   const sales = loadSales(), products = loadProducts();
   const counts = {};
@@ -330,12 +330,15 @@ app.get('/stats-data', (req, res) => {
 
 // 4) التنبيهات الذكية
 app.get('/notifications', (req, res) => {
+
+
+  const stagnantLimit = req.query.limit || 14;
   const products = loadProducts();
   const now = Date.now();
   const lowStock = products.filter(p => p.qty < 5);
   const inactive = products.filter(p => !p.lastSold || (now - new Date(p.lastSold)) > 30*24*60*60*1000);
   const expired  = products.filter(p => p.expiryDate && new Date(p.expiryDate) < now);
-  res.render('notifications', { lowStock, inactive, expired });
+  res.render('notifications', {products, lowStock, inactive, expired, limitDays: parseInt(stagnantLimit), activePage: 'notification'  });
 });
 
 // 5) تقرير أسبوعي PDF
@@ -435,7 +438,8 @@ const dateStr = `${date.getDate()}/${date.getMonth() + 1}`;
     totalSell,
     profit,
     profitDates,
-    profitValues
+    profitValues,
+    activePage: 'profit'
   });
 });
 
@@ -445,7 +449,7 @@ const dateStr = `${date.getDate()}/${date.getMonth() + 1}`;
 
 
 app.get('/help', (req, res) => {
-  res.render('help');
+  res.render('help', { activePage: 'help' });
 });
 
 
