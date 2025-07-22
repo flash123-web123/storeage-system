@@ -825,3 +825,11 @@ hr {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+
+
+.navbar a.active, .nav a.active {
+  color: #00c2ff;
+  font-weight: bold;
+  border-bottom: 2px solid #00c2ff;
+}
