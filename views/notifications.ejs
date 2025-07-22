@@ -4,7 +4,11 @@
 
 
 
-
+<form method="GET" action="/notifications">
+  <label>عدد الأيام التي تعتبر المنتج راكدًا:</label>
+  <input type="number" name="limit" value="<%= limitDays %>" min="1" />
+  <button type="submit">تحديث</button>
+</form>
 
 <div class="alert-list">
 <% if ((lowStock && lowStock.length) || 
@@ -25,13 +29,48 @@
     <span class="alert-date"><%= p.expiryDate %></span>
   </div>
   <% }); %>
-  <% inactive.forEach(p => { %>
+
+
+
+
+
+
+
+
+
+
+
+<% 
+  const now = new Date();
+  products.forEach(p => {
+    const lastDate = p.lastSold ? new Date(p.lastSold) : null;
+    const stagnantLimit = typeof limitDays !== 'undefined' ? limitDays : 14;
+
+    if (!lastDate) {
+%>
+  <div class="alert-item" style="border-left-color:#886CE4;">
+    <span class="alert-icon">🆕</span>
+    <div class="alert-text">منتج <%= p.name %> لم يتم بيعه بعد</div>
+    <span class="alert-date">📦 جديد في المخزون</span>
+  </div>
+<% 
+    } else {
+      const diffDays = Math.floor((now - lastDate) / (1000 * 60 * 60 * 24));
+      if (diffDays >= stagnantLimit) {
+%>
   <div class="alert-item" style="border-left-color:#03a9f4;">
     <span class="alert-icon">🕒</span>
-    <div class="alert-text">منتج <%= p.name %> لم يُبع منذ شهر</div>
-    <span class="alert-date">منذ 7 أيام</span>
+    <div class="alert-text">
+      منتج <%= p.name %> لم يُبع منذ <%= diffDays >= 30 ? "شهر تقريبًا" : diffDays + " يوم" %>
+    </div>
+    <span class="alert-date">منذ <%= diffDays %> يوم</span>
   </div>
-  <% }); %>
+<%
+      }
+    }
+  });
+%>
+
   <% } else { %>
   <div class="alert-list">
     <div class="alert-item">
@@ -42,6 +81,9 @@
   </div>
 <% } %>
 </div>
+
+
+
 
 
 <%- include('partials/footer') %>
